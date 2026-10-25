@@ -1,0 +1,151 @@
+/* 1. Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 2. Photography background */
+body {
+    background-image: url("photo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* 3. Sidebar container */
+.sidebar_menu {
+    height: 100vh;
+    width: 325px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+/* 4. Logo header */
+.sidebar_menu .logo {
+    height: 70px;
+    padding-left: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Logo link */
+.sidebar_menu .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 70px;
+}
+
+/* 5. Close button */
+.sidebar_menu .btn_two {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* 6. Navigation section */
+.sidebar_menu .menu {
+    margin-top: 20px;
+}
+
+.sidebar_menu .menu ul {
+    list-style: none;
+}
+
+.sidebar_menu .menu li {
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+/* Navigation links */
+.sidebar_menu .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Navigation icons */
+.sidebar_menu .menu i {
+    color: white;
+    width: 24px;
+    margin-right: 10px;
+}
+
+/* Navigation hover effect */
+.sidebar_menu .menu li:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* 7. Hamburger button */
+.btn_one {
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    left: 16px;
+    top: 16px;
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 0.2s ease;
+}
+
+/* 8. Social media section */
+.sidebar_menu .social_media {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.sidebar_menu .social_media ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+.sidebar_menu .social_media a {
+    color: white;
+    opacity: 0.65;
+    font-size: 20px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar_menu .social_media a:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 9. Checkbox-driven menu interaction */
+#check {
+    display: none;
+}
+
+/* Open sidebar when checkbox is checked */
+#check:checked ~ .sidebar_menu {
+    transform: translateX(0);
+}
+
+/* Hide hamburger while sidebar is open */
+#check:checked ~ .btn_one {
+    opacity: 0;
+    pointer-events: none;
+}
